@@ -3,255 +3,122 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Matthew Stouffer — Product Manager</title>
-<meta name="description" content="Matthew Stouffer — product manager in Calgary, AB. Seller onboarding and payments at Uscreen. Builds self-hosted tools with real typed schemas.">
+<title>Matthew Stouffer</title>
+<meta name="description" content="Matthew Stouffer — product manager at Uscreen, in Calgary. Payments, Stripe, and the cost of switching platforms. Builds software and does research.">
 <link rel="canonical" href="https://iammatthew.ca/">
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://iammatthew.ca/">
-<meta property="og:title" content="Matthew Stouffer — Product Manager">
-<meta property="og:description" content="Product manager who builds what he's pitching. Seller onboarding and payments at Uscreen.">
+<meta property="og:title" content="Matthew Stouffer">
+<meta property="og:description" content="Product manager at Uscreen. Payments, Stripe, and the cost of switching platforms.">
 <meta name="twitter:card" content="summary">
 
 <!-- bump ?v= whenever style.css changes; GitHub Pages serves assets with max-age=600 -->
-<link rel="stylesheet" href="style.css?v=2026-10-21b">
+<link rel="stylesheet" href="style.css?v=2026-10-21c">
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<main>
 
-<header class="hero">
-  <p class="eyebrow">Product Manager &mdash; Calgary, AB</p>
-  <h1><span>Matthew</span> <span>Stouffer</span></h1>
-  <p class="tagline">Product manager who builds what he&rsquo;s pitching.</p>
-  <p class="intro">
-    I work on the part of a product where someone decides whether to trust it — signup,
-    onboarding, the first payment. Day to day that means specs, trade-offs and shipping
-    decisions. Evenings it means writing the thing myself, usually in Ruby or Python,
-    because an argument about a data model goes better when you&rsquo;ve had to live in it.
-  </p>
-  <nav class="nav" aria-label="Sections">
-    <a href="#work">Work</a>
-    <a href="#approach">Approach</a>
-    <a href="#projects">Projects</a>
-    <a href="#research">Research</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header>
+    <h1>Matthew Stouffer</h1>
+    <p class="role">Product Manager at Uscreen &middot; Calgary, AB</p>
+    <p class="lede">
+      I work on payments &mdash; mostly Stripe &mdash; and on what it costs an established
+      business to switch platforms. Outside that I build software and do research, which is
+      the shortest way to explain the two lists below.
+    </p>
+  </header>
 
-<main id="main">
+  <section class="built">
+    <h2>Built</h2>
 
-  <section id="work">
-    <h2>Work</h2>
+    <a class="row" href="https://www.nfldcurrency.ca">
+      <span class="row-main">
+        <span class="row-title">Newfoundland Coin Varieties <span class="go">&#8599;</span></span>
+        <span class="row-desc">
+          A free reference for coin varieties from 1865&ndash;1947, built around Barry M.
+          Borsellino&rsquo;s research and photography. I built the pipeline and the site.
+        </span>
+      </span>
+      <span class="row-tag is-live">Live</span>
+    </a>
 
-    <article class="entry">
-      <div class="entry-head">
-        <h3>Uscreen</h3>
-        <span class="entry-note">Product Manager &middot; Current</span>
-      </div>
-      <p>
-        I lead seller onboarding — the path that takes a creator from signup to their
-        first sale. That covers the activation flow itself and the payments and checkout
-        infrastructure sitting underneath it: what a new seller has to configure before
-        money can move, how much of it can be deferred, and which steps genuinely need a
-        human decision rather than a sensible default.
-      </p>
-      <p>
-        It&rsquo;s a problem where product and infrastructure are hard to separate. Shortening
-        onboarding usually means changing what the system requires, not just what the
-        screen asks for.
-      </p>
+    <div class="row">
+      <span class="row-main">
+        <span class="row-title"><em>A New Look at Newfoundland Varieties</em></span>
+        <span class="row-desc">
+          475-page reference I helped edit from Barry&rsquo;s studies. Given away free to any
+          collector who asked.
+        </span>
+      </span>
+      <span class="row-tag">2015</span>
+    </div>
 
-      <div class="subentry">
-        <h4>Building on our own API</h4>
-        <p>
-          To understand what our Headless API actually felt like to build against, I used
-          it — a members-only site for a juggling club, in Next.js, self-hosted behind
-          Caddy. Going through signup, auth and gated content as a developer rather than
-          reading the spec surfaces the gaps that bug reports describe only indirectly.
-          It&rsquo;s the cheapest research I do.
-        </p>
-        <dl class="meta">
-          <dt>Built with</dt>
-          <dd>Uscreen Headless API (beta), Next.js, Caddy</dd>
-        </dl>
-      </div>
-    </article>
+    <div class="row">
+      <span class="row-main">
+        <span class="row-title">A club site on our own Headless API</span>
+        <span class="row-desc">
+          Next.js, self-hosted behind Caddy. Built it to find out how our beta API actually
+          feels to use. Cheapest research I do.
+        </span>
+      </span>
+      <span class="row-tag">Work</span>
+    </div>
+
+    <div class="row">
+      <span class="row-main">
+        <span class="row-title">Wunderkammer</span>
+        <span class="row-desc">
+          Self-hosted collection manager. A module is YAML that issues real DDL, so every
+          collection gets a properly typed Postgres table &mdash; no JSONB blob.
+        </span>
+      </span>
+      <span class="row-tag is-wip">In progress</span>
+    </div>
   </section>
 
-  <section id="approach">
-    <h2>Approach</h2>
-
-    <dl class="principles">
-      <dt>Model the domain properly the first time.</dt>
-      <dd>
-        Typed columns, real constraints, actual foreign keys. A schema that encodes what
-        a thing <em>is</em> answers questions for years; a bag of untyped JSON defers the
-        work to whoever reads it next, usually under pressure.
-      </dd>
-
-      <dt>Build enough of it to know what you&rsquo;re asking for.</dt>
-      <dd>
-        I&rsquo;m not the strongest engineer in any room, and I don&rsquo;t need to be. But having
-        implemented a version myself changes the quality of the conversation — I come with
-        a sharper question instead of a vaguer request.
-      </dd>
-
-      <dt>Software should run on the owner&rsquo;s terms.</dt>
-      <dd>
-        Self-hosted, exportable, documented well enough that someone else could pick it up.
-        Most of what I build outside work is for a niche too small to be worth a business
-        model, which is exactly why it should be free and open.
-      </dd>
-
-      <dt>Credit the source material precisely.</dt>
-      <dd>
-        A lot of my projects present someone else&rsquo;s research. Getting attribution and
-        licensing exactly right isn&rsquo;t an afterthought to that work — it&rsquo;s the reason the
-        work is allowed to exist.
-      </dd>
-    </dl>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <article class="entry">
-      <div class="entry-head">
-        <h3>Newfoundland Coin Varieties</h3>
-        <span class="badge badge-live">Live</span>
-      </div>
-      <p class="entry-url"><a href="https://www.nfldcurrency.ca">www.nfldcurrency.ca</a></p>
-      <p>
-        A free reference for Newfoundland decimal coin varieties, 1865&ndash;1947 — the
-        repunched dates, re&#8209;engraved letters and die changes that separate one striking
-        from another. It covers eight denominations, from the large cents through to the
-        $2 gold.
-      </p>
-      <p>
-        The research, variety descriptions and photographs are
-        <strong>Barry M. Borsellino&rsquo;s</strong>, built up over decades. This site is that
-        work made searchable: I built the pipeline and the site, and continue the project
-        with him.
-      </p>
-      <p>
-        The hard part is that the source material is photographs and word-processor
-        documents, not a database. A Python pipeline reads 16&nbsp;GB of Barry&rsquo;s original
-        photography and 87 research documents, decodes his filename conventions, discards
-        duplicates, and resolves the result into 279 varieties across 63 year studies —
-        each published once its write-up is complete. Every variety page leads with one
-        featured coin and its key diagnostic close-up, with Barry&rsquo;s own guide lines
-        switchable on and off so you can compare against your own coin under a loupe.
-      </p>
-      <ul class="stats">
-        <li><span class="stat-num">279</span> <span class="stat-label">varieties</span></li>
-        <li><span class="stat-num">63</span> <span class="stat-label">year studies</span></li>
-        <li><span class="stat-num">16<small>GB</small></span> <span class="stat-label">of photography</span></li>
-        <li><span class="stat-num">8</span> <span class="stat-label">denominations</span></li>
-      </ul>
-      <dl class="meta">
-        <dt>Role</dt>
-        <dd>Designed and built the pipeline and site</dd>
-        <dt>Stack</dt>
-        <dd>Python, Jinja2, Pillow, LibreOffice headless; static HTML/CSS/JS and WebP on Cloudflare Pages</dd>
-        <dt>Licence</dt>
-        <dd>Content CC BY-NC 4.0, credited to Barry M. Borsellino</dd>
-      </dl>
-    </article>
-
-    <article class="entry">
-      <div class="entry-head">
-        <h3><em>A New Look at Newfoundland Varieties</em></h3>
-        <span class="badge">2015</span>
-      </div>
-      <p>
-        Before the website there was a book. Barry had decades of variety studies spread
-        across documents and photographs, and no single place they lived together. I
-        helped edit them into one 475&#8209;page reference, which Barry then gave away free
-        to any collector who asked for it.
-      </p>
-      <p>
-        It was the first version of the same problem the site solves now — someone else&rsquo;s
-        expertise, scattered, worth more once it&rsquo;s organised and findable. Editing it is
-        also how I learned the material well enough to build a pipeline over it a decade
-        later.
-      </p>
-      <dl class="meta">
-        <dt>Role</dt>
-        <dd>Editing and compilation; research and photography by Barry M. Borsellino</dd>
-        <dt>Scale</dt>
-        <dd>475 pages, distributed free</dd>
-      </dl>
-    </article>
-
-    <article class="entry">
-      <div class="entry-head">
-        <h3>Wunderkammer</h3>
-        <span class="badge badge-wip">In development</span>
-      </div>
-      <p>
-        A self-hosted collection manager for any kind of collectible — coins, cards,
-        plants, whatever you keep. The existing options are Windows-only, closed, and
-        built for exactly one category. This one is meant to be free, run on your own
-        hardware, and let your data leave whenever you want.
-      </p>
-      <p>
-        The interesting constraint is supporting arbitrary collection types without
-        giving up on the database. A collection type is a YAML module; installing one
-        issues real DDL and creates a properly typed PostgreSQL table with its own
-        columns and indexes. No JSONB blob, no entity-attribute-value table. A coin has
-        a <code>year</code> that is an integer and a <code>grade</code> that is
-        constrained to the Sheldon scale, because that&rsquo;s what it actually is — and
-        modules are just repositories, so anyone can define a category I&rsquo;d never
-        think of.
-      </p>
-      <p>
-        It&rsquo;s also built MCP&#8209;first: every feature is exposed as a tool an AI agent can
-        call, so the API and the agent interface are the same surface rather than one
-        bolted onto the other. Still in development and not yet public — I intend to
-        open-source it once it&rsquo;s worth someone else&rsquo;s time to run.
-      </p>
-      <dl class="meta">
-        <dt>Role</dt>
-        <dd>Everything — product, schema design, implementation</dd>
-        <dt>Stack</dt>
-        <dd>Python, FastAPI, PostgreSQL, Svelte, Tailwind, Docker Compose, fastmcp</dd>
-        <dt>Status</dt>
-        <dd>Private while the module system settles</dd>
-      </dl>
-    </article>
-
-  </section>
-
-  <section id="research">
+  <section class="built research">
     <h2>Research</h2>
-    <p class="standalone">
-      I keep a few amateur research notebooks going — old scripts, manuscripts and
-      objects that nobody has fully explained yet. I&rsquo;m not expecting to solve any of
-      them, and that isn&rsquo;t really the point. The appeal is the same thing I like about
-      product work: a pile of incomplete, contradictory evidence, and the discipline of
-      writing down how confident you actually are in each piece of it rather than letting
-      a good story paper over the gaps.
-    </p>
+
+    <a class="row" href="https://scrollprize.org">
+      <span class="row-main">
+        <span class="row-title">Vesuvius Challenge <span class="go">&#8599;</span></span>
+        <span class="row-desc">
+          The open effort to read the carbonised Herculaneum scrolls from CT scans, without
+          unrolling them. I&rsquo;m working on PHerc. 0358.
+        </span>
+      </span>
+      <span class="row-tag">Ongoing</span>
+    </a>
+
+    <div class="row">
+      <span class="row-main">
+        <span class="row-title">Voynich and Indus notebooks</span>
+        <span class="row-desc">
+          Provenance and physical evidence rather than decipherment &mdash; what the objects
+          themselves can establish about who made them, where and when, and which open
+          questions modern tools could now settle.
+        </span>
+      </span>
+      <span class="row-tag">Ongoing</span>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact-line">
-      Happy to talk about onboarding, payments, or why your coin software should have a
-      real schema.
+  <footer>
+    <p class="elsewhere">
+      Also: I volunteer with the
+      <a href="https://www.thecanadianfutureparty.ca/">Canadian Future Party</a>, which
+      sets policy by making &ldquo;no-nonsense decisions rooted in evidence, research and
+      results.&rdquo;
     </p>
-    <ul class="links">
-      <li><a href="mailto:hello@iammatthew.ca">hello@iammatthew.ca</a></li>
-      <li><a href="https://github.com/matticusfinch">GitHub</a></li>
-    </ul>
-  </section>
+    <p class="contact">
+      <a href="mailto:hello@iammatthew.ca">hello@iammatthew.ca</a>
+      <a href="https://github.com/matticusfinch">GitHub</a>
+    </p>
+  </footer>
 
 </main>
-
-<footer>
-  <p>&copy; 2026 Matthew Stouffer &middot; Calgary, AB</p>
-</footer>
 
 <script type="application/ld+json">
 {
