@@ -2,7 +2,8 @@
   --bg: #fcfcfb;
   --fg: #16171b;
   --muted: #5d5f68;
-  --faint: #8e909a;
+  /* --faint sits on the smallest text (10.9px tags and labels); keep it >=4.5:1 on --bg */
+  --faint: #6e707a;
   --accent: #2f6a52;
   --border: #e7e6e2;
   --hover: #f4f3f0;
@@ -14,7 +15,7 @@
     --bg: #111317;
     --fg: #eaebee;
     --muted: #9a9ca6;
-    --faint: #6a6c76;
+    --faint: #868993;
     --accent: #6fc39b;
     --border: #23262d;
     --hover: #181b21;
@@ -86,13 +87,14 @@ h2 {
   padding: 1.15rem 0.9rem;
   margin: 0 -0.9rem;
   border-radius: 8px;
-  border-top: 1px solid var(--border);
   text-decoration: none;
   color: inherit;
 }
 
-.row:first-of-type {
-  border-top: none;
+/* sibling selector, not :first-of-type. Rows alternate <a>/<div>, so
+   :first-of-type cleared the border on the first of EACH tag type. */
+.row + .row {
+  border-top: 1px solid var(--border);
 }
 
 a.row {
