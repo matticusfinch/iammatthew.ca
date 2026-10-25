@@ -101,7 +101,8 @@ a.row {
   transition: background 0.18s ease;
 }
 
-a.row:hover {
+a.row:hover,
+a.row:focus-visible {
   background: var(--hover);
 }
 
@@ -124,7 +125,8 @@ a.row:hover {
   font-weight: 600;
 }
 
-a.row:hover .row-title {
+a.row:hover .row-title,
+a.row:focus-visible .row-title {
   color: var(--accent);
 }
 
@@ -137,7 +139,9 @@ a.row:hover .row-title {
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
-a.row:hover .go {
+/* keyboard users need the same affordance mouse users get */
+a.row:hover .go,
+a.row:focus-visible .go {
   opacity: 1;
   transform: none;
 }
@@ -238,4 +242,51 @@ a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 3px;
+}
+
+/* ---------------- motion ---------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .go {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------- print ---------------- */
+
+@media print {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --muted: #333;
+    --faint: #555;
+    --accent: #000;
+    --border: #bbb;
+    --hover: transparent;
+  }
+  main {
+    max-width: none;
+    padding: 0;
+  }
+  .row {
+    break-inside: avoid;
+  }
+  .go {
+    display: none;
+  }
+  /* a printed page loses hrefs, so write them out */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555;
+    word-break: break-all;
+  }
 }
